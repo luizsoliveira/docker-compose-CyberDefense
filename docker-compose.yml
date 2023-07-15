@@ -3,7 +3,7 @@ services:
   cyberdefense-python:
     build:
       context: ./
-      dockerfile: dockerfiles/cyberdefense-python
+      dockerfile: dockerfiles/cyberdefense-python-dev
     stdin_open: true
     ports:
       - 5001:5000
