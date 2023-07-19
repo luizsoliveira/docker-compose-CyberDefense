@@ -1,5 +1,4 @@
 FROM luizsoliveira/cyberdefense:latest
-
 #Additional PIP packages
 #RUN pip install package1 package2...
 
@@ -7,3 +6,7 @@ FROM luizsoliveira/cyberdefense:latest
 #Using the COPY command here, developers need to remember to run
 # `docker-compose build` command all times that the source code was being changed
 COPY ../app/CyberDefense /usr/src/app
+
+#Fixing the line ending problems
+find . -type f -name "*.sh" -print0 | xargs -0 -n 1 -P 4 dos2unix
+find . -type f -name "*.pl" -print0 | xargs -0 -n 1 -P 4 dos2unix
